@@ -1,13 +1,11 @@
 # http-transport-rate-limiter
-A global plugin for http-transport to utilise the simple-rate-limiter that was in use in Flashheart
-
-[![Build Status](https://travis-ci.org/niklasR/http-transport-simple-rate-limiter.svg?branch=master)](https://travis-ci.org/niklasR/http-transport-simple-rate-limiter)
+A global plugin for http-transport to utilise the [simple-rate-limiter](https://github.com/xavi-/node-simple-rate-limiter).
 
 ## Usage
 
 Configure the plugin as shown below. You can then use it as a global plugin for http-transport.
 ```js
-const simpleRateLimiterPlugin = require('http-transport-simple-rate-limiter')(count, duration);
+const simpleRateLimiterPlugin = require('@bbc/http-transport-rate-limiter')(count, duration);
 ```
 
 The plugin takes two arguments:
@@ -18,11 +16,13 @@ The plugin takes two arguments:
 
 ```js
 'use strict';
-const url = 'http://example.com/';
-const simpleRateLimiterPlugin = require('http-transport-simple-rate-limiter');
 
-const client = require('http-transport').createClient()
-  .useGlobal(simpleRateLimiterPlugin(2, 1000));
+const url = 'http://example.com/';
+const simpleRateLimiterPlugin = require('@bbc/http-transport-rate-limiter');
+
+const client = require('http-transport').createBuilder()
+  .use(simpleRateLimiterPlugin(2, 1000)
+  .createClient();
 
 client
   .get(url)
