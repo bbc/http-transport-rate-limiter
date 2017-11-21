@@ -1,4 +1,4 @@
-# http-transport-simple-rate-limiter
+# http-transport-rate-limiter
 A global plugin for http-transport to utilise the simple-rate-limiter that was in use in Flashheart
 
 [![Build Status](https://travis-ci.org/niklasR/http-transport-simple-rate-limiter.svg?branch=master)](https://travis-ci.org/niklasR/http-transport-simple-rate-limiter)
