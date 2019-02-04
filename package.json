@@ -17,7 +17,7 @@
     "url": "https://github.com/bbc/http-transport-rate-limiter/issues"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "homepage": "https://github.com/bbc/http-transport-rate-limiter",
   "devDependencies": {
