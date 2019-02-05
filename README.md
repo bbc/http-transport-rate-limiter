@@ -1,3 +1,11 @@
+[![NPM downloads](https://img.shields.io/npm/dm/@bbc/http-transport-rate-limiter.svg?style=flat)](https://npmjs.org/package/@bbc/http-transport-rate-limiter)
+![npm](https://img.shields.io/npm/v/@bbc/http-transport-rate-limiter.svg)
+[![Coverage Status](https://coveralls.io/repos/github/bbc/http-transport-rate-limiter/badge.svg?branch=master)](https://coveralls.io/github/bbc/http-transport-rate-limiter?branch=master)
+ ![license](https://img.shields.io/badge/license-MIT-blue.svg) 
+![github-issues](https://img.shields.io/github/issues/bbc/http-transport-rate-limiter.svg)
+![stars](https://img.shields.io/github/stars/bbc/http-transport-rate-limiter.svg)
+![forks](https://img.shields.io/github/forks/bbc/http-transport-rate-limiter.svg)
+
 # http-transport-rate-limiter
 A global plugin for http-transport to utilise the [simple-rate-limiter](https://github.com/xavi-/node-simple-rate-limiter).
 
