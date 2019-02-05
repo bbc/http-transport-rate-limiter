@@ -31,13 +31,12 @@ const client = require('@bbc/http-transport').createBuilder()
   .use(simpleRateLimiterPlugin(2, 1000)
   .createClient();
 
-client
+const res = await client
   .get(url)
-  .asResponse()
-  .then((res) => {
-    if (res.statusCode === 200) {
-      console.log(res.body);
-    }
-  });
+  .asResponse();
+ 
+if (res.statusCode === 200) {
+  console.log(res.body);
+}
 ```
 
