@@ -20,7 +20,7 @@ The plugin takes two arguments:
 const url = 'http://example.com/';
 const simpleRateLimiterPlugin = require('@bbc/http-transport-rate-limiter');
 
-const client = require('http-transport').createBuilder()
+const client = require('@bbc/http-transport').createBuilder()
   .use(simpleRateLimiterPlugin(2, 1000)
   .createClient();
 
