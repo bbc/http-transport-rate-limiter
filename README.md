@@ -1,4 +1,5 @@
 [![NPM downloads](https://img.shields.io/npm/dm/@bbc/http-transport-rate-limiter.svg?style=flat)](https://npmjs.org/package/@bbc/http-transport-rate-limiter)
+[![Build Status](https://api.travis-ci.org/bbc/http-transport-rate-limiter.svg)](https://travis-ci.org/bbc/http-transport-rate-limiter) 
 ![npm](https://img.shields.io/npm/v/@bbc/http-transport-rate-limiter.svg)
  ![license](https://img.shields.io/badge/license-MIT-blue.svg) 
 ![github-issues](https://img.shields.io/github/issues/bbc/http-transport-rate-limiter.svg)
