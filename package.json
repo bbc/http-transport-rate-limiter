@@ -4,9 +4,8 @@
   "description": "A global plugin for http-transport to utilise the simple-rate-limiter",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "lint": "eslint .",
-    "posttest": "npm run lint"
+    "test": "mocha && npm run lint",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
