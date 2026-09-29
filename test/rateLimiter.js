@@ -1,5 +1,4 @@
-'use strict';
-const assert = require('assert');
+const assert = require('node:assert');
 
 const RequestLimiter = require('../index');
 
@@ -39,7 +38,7 @@ describe('Simple Rate Limiter', () => {
 
   it('returns a promise', (done) => {
     const requestLimiter = RequestLimiter(10, 100);
-    const next1 = makeNext(() => { });
+    const next1 = makeNext(() => {});
 
     requestLimiter(context, next1).then(() => {
       done();
