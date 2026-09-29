@@ -4,7 +4,7 @@
   "description": "A global plugin for http-transport to utilise the simple-rate-limiter",
   "main": "index.js",
   "scripts": {
-    "test": "mocha && pnpm run lint",
+    "test": "jest && pnpm run lint",
     "lint": "eslint ."
   },
   "repository": {
@@ -23,12 +23,19 @@
     "@bbc/http-transport": "^4.3.0",
     "eslint": "^4.18.2",
     "eslint-config-iplayer-es6": "^1.3.0",
-    "mocha": "^5.2.0",
-    "simple-rate-limiter": "^0.2.3",
-    "sinon": "^7.2.3"
+    "jest": "^30.1.3",
+    "simple-rate-limiter": "^0.2.3"
   },
   "eslintConfig": {
-    "extends": "iplayer-es6"
+    "extends": "iplayer-es6",
+    "env": {
+      "jest": true
+    }
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/**/*.js"
+    ]
   },
   "dependencies": {
     "simple-rate-limiter": "^0.2.3"
