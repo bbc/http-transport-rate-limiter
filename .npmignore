@@ -9,7 +9,6 @@
 test
 
 # Linting / formatting
-.jsbeautifyrc
 biome.json
 
 # Package management
