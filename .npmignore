@@ -1,0 +1,20 @@
+# Version control
+.git
+.gitignore
+
+# CI / GitHub
+.github
+
+# Tests
+test
+
+# Linting / formatting
+biome.json
+
+# Package management
+pnpm-lock.yaml
+pnpm-workspace.yaml
+node_modules
+
+# Misc
+.npmrc

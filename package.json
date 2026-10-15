@@ -4,8 +4,8 @@
   "description": "A global plugin for http-transport to utilise the simple-rate-limiter",
   "main": "index.js",
   "scripts": {
-    "test": "mocha && pnpm run lint",
-    "lint": "eslint ."
+    "test": "jest && pnpm run lint",
+    "lint": "biome check ."
   },
   "repository": {
     "type": "git",
@@ -16,24 +16,24 @@
     "url": "https://github.com/bbc/http-transport-rate-limiter/issues"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=24.0.0"
   },
   "homepage": "https://github.com/bbc/http-transport-rate-limiter",
   "devDependencies": {
-    "@bbc/http-transport": "^4.3.0",
-    "eslint": "^4.18.2",
-    "eslint-config-iplayer-es6": "^1.3.0",
-    "mocha": "^5.2.0",
-    "simple-rate-limiter": "^0.2.3",
-    "sinon": "^7.2.3"
+    "@bbc/http-transport": "^5.0.1",
+    "@biomejs/biome": "^2.5.14",
+    "jest": "^30.1.3",
+    "simple-rate-limiter": "^0.2.3"
   },
-  "eslintConfig": {
-    "extends": "iplayer-es6"
+  "jest": {
+    "testMatch": [
+      "**/test/**/*.js"
+    ]
   },
   "dependencies": {
     "simple-rate-limiter": "^0.2.3"
   },
   "peerDependencies": {
-    "@bbc/http-transport": "^3 ^4"
+    "@bbc/http-transport": "^5.0.0"
   }
 }

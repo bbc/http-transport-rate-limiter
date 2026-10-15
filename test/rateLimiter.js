@@ -1,6 +1,4 @@
-'use strict';
-const assert = require('assert');
-const sinon = require('sinon');
+const assert = require('node:assert');
 
 const RequestLimiter = require('../index');
 
@@ -30,44 +28,42 @@ const makeNext = (spy) => {
 };
 
 describe('Simple Rate Limiter', () => {
-  let clock;
-
   beforeEach(() => {
-    clock = sinon.useFakeTimers();
+    jest.useFakeTimers();
   });
 
   afterEach(() => {
-    clock.restore();
+    jest.useRealTimers();
   });
 
   it('returns a promise', (done) => {
     const requestLimiter = RequestLimiter(10, 100);
-    const next1 = makeNext(() => { });
+    const next1 = makeNext(() => {});
 
     requestLimiter(context, next1).then(() => {
       done();
     });
 
-    clock.tick(1);
+    jest.advanceTimersByTime(1);
   });
 
   it('limits requests', (done) => {
     const requestLimiter = RequestLimiter(1, 10000);
 
-    const spy1 = sinon.spy();
-    const spy2 = sinon.spy();
+    const spy1 = jest.fn();
+    const spy2 = jest.fn();
     requestLimiter(context, makeNext(spy1));
     requestLimiter(context, makeNext(spy2));
 
-    clock.tick(1);
-    assert.ok(spy1.called);
-    assert.ok(!spy2.called);
+    jest.advanceTimersByTime(1);
+    assert.ok(spy1.mock.calls.length > 0);
+    assert.strictEqual(spy2.mock.calls.length, 0);
 
-    clock.tick(9998);
-    assert.ok(!spy2.called);
+    jest.advanceTimersByTime(9998);
+    assert.strictEqual(spy2.mock.calls.length, 0);
 
-    clock.tick(1);
-    assert.ok(spy2.called);
+    jest.advanceTimersByTime(1);
+    assert.ok(spy2.mock.calls.length > 0);
     done();
   });
 });
