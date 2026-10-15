@@ -1,6 +1,6 @@
 {
   "name": "@bbc/http-transport-rate-limiter",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "A global plugin for http-transport to utilise the simple-rate-limiter",
   "main": "index.js",
   "scripts": {
